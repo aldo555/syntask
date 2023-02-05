@@ -31,7 +31,7 @@ php artisan migrate
 
 Run the dev server
 ```
-php artisan server
+php artisan serve
 ```
 
 ## Setting up the frontend
