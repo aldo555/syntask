@@ -23,7 +23,7 @@
       </div>
       <div class="col-span-4 text-gray-100 px-2 lg:pt-2 text-md">
         <p class="text-indigo-500 mb-1"><strong>#</strong>  Tag your tasks with ease using hashtags. #BecauseWhyNot #WorkLifeBalance #Overachiever</p>
-        <p class="text-green-500 mb-1"><strong>!</strong> "Prioritize like a pro with just a simple '!' and a number. !0 for most, !3 for least."</p>
+        <p class="text-green-500 mb-1"><strong>!</strong> Prioritize like a pro with just a simple '!' and a number. !0 for most, !3 for least.</p>
         <p class="text-cyan-500"><strong>due:</strong> Set deadlines like a boss with our special due date magic word. Just add "due:" followed by your desired date in yyyy-mm-dd format. Or be lazy and use "due:today," "due:tomorrow,"</p>
       </div>
     </div>
