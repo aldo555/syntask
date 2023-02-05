@@ -21,9 +21,14 @@
       </defs>
     </svg>
     <div class="max-w-6xl w-full">
-      <div class="mx-auto px-6 max-w-6xl w-full pt-4 flex lg:px-8 justify-end">
-        <SunIcon @click="enableLightMode()" class="h-6 w-6 text-gray-400 mr-2" />
-        <ArrowRightOnRectangleIcon @click="logout()" class="h-6 w-6 text-gray-400 cursor-pointer" />
+      <div class="mx-auto px-6 max-w-6xl w-full pt-4 flex lg:px-8 justify-between items-center">
+        <div class="pr-8">
+          <p class="text-gray-400">Hey {{ userStore.user.name }}, the struggle continues.</p>
+        </div>
+        <div class="flex">
+          <SunIcon @click="enableLightMode()" class="h-6 w-6 text-gray-400 mr-2" />
+          <ArrowRightOnRectangleIcon @click="logout()" class="h-6 w-6 text-gray-400 cursor-pointer" />
+        </div>
       </div>
       <div class="mx-auto px-6 max-w-6xl w-full pt-10 pb-24 sm:pb-32 flex flex-col lg:py-40 lg:pt-32 lg:px-8 items-center">
         <Logo class="text-5xl sm:text-6xl" />
