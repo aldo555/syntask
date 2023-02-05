@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-gray-500/10 backdrop-blur-sm rounded-md mb-6 px-4 py-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="hidden lg:grid bg-gray-500/10 backdrop-blur-sm rounded-md mb-6 px-4 py-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
       <div>
         <kbd class="inline-flex items-center rounded border bg-gray-800 border-gray-700 px-2 font-sans text-sm font-medium text-gray-50">⇧N</kbd>
         <span @click="switchToNewTask()" class="text-sm text-gray-300 ml-2 hover:text-gray-100 cursor-pointer">Create a new task</span>
@@ -103,12 +103,6 @@ function updateTask() {
     taskStore.resetEdit()
     currentlyEditedTask.value = null
     resetUserInput()
-
-    notify({
-      group: "success",
-      title: "Whoop-dee-doo!",
-      text: data.data.message
-    }, 4000)
   })
 }
 
@@ -130,12 +124,6 @@ function createTask() {
     priority: priority.value,
     due_date: dueDate.value,
     tags: tags.value,
-  }).then((data) => {
-    notify({
-      group: "success",
-      title: "Success",
-      text: data.data.message
-    }, 4000)
   })
 
   resetUserInput()

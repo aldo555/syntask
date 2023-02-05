@@ -73,23 +73,11 @@ function markAsComplete(task) {
     ...task,
     tags: task.tags.map(tag => tag.name.en),
     completed: true,
-  }).then((data) => {
-    notify({
-      group: "success",
-      title: "Whoop-dee-doo!",
-      text: data.data.message
-    }, 4000)
   })
 }
 
 function deleteTask(task) {
-  taskStore.deleteTask(task).then((data) => {
-    notify({
-      group: "success",
-      title: "Whoop-dee-doo!",
-      text: data.data.message
-    }, 4000)
-  })
+  taskStore.deleteTask(task)
 }
 
 function markForEdit(task) {
