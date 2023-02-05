@@ -35,9 +35,9 @@
 
         <SmartInput class="w-full mt-16 md:mt-20 sm:mt-24" />
 
-        <OngoingTasks class="w-full mt-16 md:mt-20 sm:mt-24" />
+        <OngoingTasks class="w-full mt-10" />
 
-        <ArchivedTasks class="w-full mt-16 md:mt-20 sm:mt-24" />
+        <ArchivedTasks class="w-full mt-10" />
       </div>
     </div>
   </div>
