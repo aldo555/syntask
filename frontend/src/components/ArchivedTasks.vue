@@ -1,10 +1,10 @@
 <template>
   <div>
     <div v-if="tasks.length" class="mb-4 text-2xl text-gray-400">Past Tasks Cemetery</div>
-    <div v-if="tasks.length" class="overflow-hidden bg-gray-600/10 backdrop-blur-sm border border-gray-700 shadow rounded-md">
-      <ul role="list" class="divide-y divide-gray-700" v-auto-animate>
+    <div v-if="tasks.length" class="overflow-hidden bg-gray-600/10 backdrop-blur-sm border border-gray-800 shadow rounded-md opacity-90">
+      <ul role="list" class="divide-y divide-gray-800" v-auto-animate>
         <li v-for="task in tasks" :key="task.id" class="flex">
-          <div class="flex flex-grow items-center px-4 py-4 sm:px-6 cursor-pointer">
+          <div class="flex flex-grow items-center px-4 py-4 sm:px-6">
             <div class="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
               <div class="flex items-center">
                 <div class="flex flex-col">
