@@ -32,7 +32,7 @@
           </div>
         </li>
       </ul>
-      <span v-else class="text-gray-600 text-lg sm:text-2xl lg:text-4xl block w-full text-center p-12">
+      <span v-else class="text-gray-600 text-lg text-xl block w-full text-center p-12">
         Looks like it's time to add some tasks, don't you think?
       </span>
     </div>

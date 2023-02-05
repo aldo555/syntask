@@ -71,19 +71,23 @@ import { LockClosedIcon } from '@heroicons/vue/20/solid'
 import Logo from '@/components/Logo.vue'
 import AuthService from "@/services/AuthService"
 import {notify} from "notiwind";
+import { useUserStore } from "@/stores/user"
 
 const router = useRouter()
+
+const userStore = useUserStore()
 
 const name = ref("")
 const email = ref("")
 const password = ref("")
 
-function onSubmit() {
+async function onSubmit() {
   AuthService.register({
     name: name.value,
     email: email.value,
     password: password.value
   }).then((response) => {
+    userStore.setUser(response.data.user)
     notify({
       group: "success",
       title: "Whoop-dee-doo!",

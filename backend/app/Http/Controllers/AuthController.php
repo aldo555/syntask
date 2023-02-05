@@ -19,8 +19,11 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        Auth::login($user);
+
         return response()->json([
-            'message' => 'Your life just got busier. Congratulations.'
+            'message' => 'Your life just got busier. Congratulations.',
+            'user' => $user,
         ], 201);
     }
 

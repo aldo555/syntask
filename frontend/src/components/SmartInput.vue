@@ -55,13 +55,14 @@
 <script setup>
 import { PlusIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
 import { ref, watch } from 'vue'
-import { Switch } from '@headlessui/vue'
 import { useKeypress } from "vue3-keypress"
+import { notify } from "notiwind"
+import debounce from 'lodash.debounce'
 import { useTaskStore } from "@/stores/task"
+import { Switch } from '@headlessui/vue'
 import PriorityBadge from "@/components/PriorityBadge.vue"
 import DueDateBadge from "@/components/DueDateBadge.vue"
 import TagsBadges from "@/components/TagsBadges.vue"
-import { notify } from "notiwind"
 
 const taskStore = useTaskStore()
 
@@ -140,11 +141,15 @@ function createTask() {
   resetUserInput()
 }
 
-function searchTasks() {
-  if (!userInput.value && !priority.value && !dueDate.value && !tags.value.length) {
-    return
+watch(userInput, debounce(() => {
+  if (isSearching.value) {
+    searchTasks()
   }
+}, 500))
 
+
+
+function searchTasks() {
   extractSyntax()
 
   taskStore.searchTasks({
@@ -271,6 +276,10 @@ function switchToNewTask() {
 function switchToSearch() {
   isSearching.value = true
   smartInput.value.focus()
+
+  if (userInput.value.length > 0 || tags.value.length > 0 || priority.value !== null || dueDate.value !== null) {
+    searchTasks()
+  }
 }
 
 useKeypress({
