@@ -1,4 +1,4 @@
-# syntask
+# Syntask
 The only productivity app that doesn't actually make you productive.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0e7e7763-c20c-48d7-8c0d-79f3f4906011/deploy-status)](https://app.netlify.com/sites/deft-empanada-3f34c7/deploys)
