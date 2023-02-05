@@ -1,26 +1,35 @@
 <template>
   <div>
-    <div class="hidden lg:grid bg-gray-500/10 backdrop-blur-sm rounded-md mb-6 px-4 py-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-      <div>
+    <div class="text-center mb-3">
+      <span v-if="isSyntaskGuideShown" @click="isSyntaskGuideShown = false" class="cursor-pointer text-gray-300 hover:text-gray-200">Hide Syntask Guide</span>
+      <span v-else @click="isSyntaskGuideShown = true" class="cursor-pointer text-gray-300 hover:text-gray-200">Show Syntask Guide</span>
+    </div>
+    <div v-show="isSyntaskGuideShown" class="bg-gray-500/10 backdrop-blur-sm rounded-md mb-4 px-4 py-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="hidden lg:block">
         <kbd class="inline-flex items-center rounded border bg-gray-800 border-gray-700 px-2 font-sans text-sm font-medium text-gray-50">⇧N</kbd>
         <span @click="switchToNewTask()" class="text-sm text-gray-300 ml-2 hover:text-gray-100 cursor-pointer">Create a new task</span>
       </div>
-      <div>
+      <div class="hidden lg:block">
         <kbd class="inline-flex items-center rounded border bg-gray-800 border-gray-700 px-2 font-sans text-sm font-medium text-gray-50">⇧S</kbd>
         <span @click="switchToSearch()" class="text-sm text-gray-300 ml-2 hover:text-gray-100 cursor-pointer">Search tasks</span>
       </div>
-      <div>
+      <div class="hidden lg:block">
         <kbd class="inline-flex items-center rounded border bg-gray-800 border-gray-700 px-2 font-sans text-sm font-medium text-gray-50">⇧R</kbd>
         <span @click="resetUserInput()" class="text-sm text-gray-300 ml-2 hover:text-gray-100 cursor-pointer">Reset input</span>
       </div>
-      <div>
+      <div class="hidden lg:block">
         <kbd class="inline-flex items-center rounded border bg-gray-800 border-gray-700 px-2 font-sans text-sm font-medium text-gray-50">⇧W</kbd>
         <span @click="deleteAllTasks()" class="text-sm text-gray-300 ml-2 hover:text-gray-100 cursor-pointer">Relieve all stress</span>
+      </div>
+      <div class="col-span-4 text-gray-100 px-2 lg:pt-2 text-md">
+        <p class="text-indigo-500 mb-1"><strong>#</strong>  Tag your tasks with ease using hashtags. #BecauseWhyNot #WorkLifeBalance #Overachiever</p>
+        <p class="text-green-500 mb-1"><strong>!</strong> "Prioritize like a pro with just a simple '!' and a number. !0 for most, !3 for least."</p>
+        <p class="text-cyan-500"><strong>due:</strong> Set deadlines like a boss with our special due date magic word. Just add "due:" followed by your desired date in yyyy-mm-dd format. Or be lazy and use "due:today," "due:tomorrow,"</p>
       </div>
     </div>
     <div class="flex rounded-md shadow-sm bg-gray-800 rounded-full">
       <div class="relative flex flex-grow items-stretch focus-within:z-10">
-        <input @keydown.space="extractSyntax()" @keydown.enter="currentlyEditedTask ? updateTask() : !isSearching ? createTask() : searchTasks()" v-model="userInput" ref="smartInput" type="text" name="smart" id="smart" class="block w-full rounded-none rounded-l-full border-gray-700 border-r-0 bg-gray-800 text-gray-50 placeholder-gray-600 pl-5 focus:border-indigo-500 focus:ring-indigo-500" placeholder="Write down your latest burden or ignore it. #pointless !3" />
+        <input @keydown.space="extractSyntax()" @keydown.enter="currentlyEditedTask ? updateTask() : !isSearching ? createTask() : searchTasks()" v-model="userInput" ref="smartInput" type="text" name="smart" id="smart" class="block w-full rounded-none rounded-l-full border-gray-700 border-r-0 bg-gray-800 text-gray-50 placeholder-gray-600 pl-5 focus:border-indigo-500 focus:ring-indigo-500" placeholder="Write down your latest burden or ignore it. #pointless !3 due:today" />
       </div>
       <div v-if="!currentlyEditedTask" type="button" class="relative -ml-px inline-flex items-center space-x-2 border border-gray-700 border-l-0 bg-gray-800 pr-1 pl-2 py-1 text-sm font-medium text-gray-700">
         <Switch v-model="isSearching" :class="[isSearching ? 'bg-indigo-900' : 'bg-indigo-700', 'relative inline-flex h-8 w-16 flex-shrink-0 cursor-pointer rounded-full border-2 border-gray-700 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-900 focus:ring-offset-2']">
@@ -66,6 +75,7 @@ import TagsBadges from "@/components/TagsBadges.vue"
 
 const taskStore = useTaskStore()
 
+const isSyntaskGuideShown = ref(false)
 const smartInput = ref('')
 const isSearching = ref(false)
 const userInput = ref('')
