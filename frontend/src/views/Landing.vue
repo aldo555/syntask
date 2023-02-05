@@ -25,11 +25,11 @@
         <Logo />
         <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-50 sm:text-5xl">Your One-Stop-Shop for Unfinished Business</h1>
         <p class="mt-6 text-lg leading-8 text-gray-300">Finally, a to-do list app that never runs out of tasks! Because let's be real, your responsibilities are never-ending, so why should your to-do list be any different?</p>
-        <div class="mt-10 flex items-center gap-x-6">
-          <router-link to="login" class="rounded-md bg-indigo-500 px-3.5 py-1.5 text-base font-semibold leading-7 text-indigo-50 shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">
+        <div class="mt-6 sm:mt-10 flex flex-wrap items-center gap-x-6">
+          <router-link to="login" class="mt-4 sm:mt-0 rounded-md bg-indigo-500 px-3.5 py-1.5 sm:text-base font-semibold leading-7 text-indigo-50 shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">
             Login and Embrace the Chaos
           </router-link>
-          <router-link to="register" class="text-base font-semibold leading-7 text-gray-50">Join the Fun (Not Really) <span aria-hidden="true">→</span></router-link>
+          <router-link to="register" class="mt-4 sm:mt-0 text-base font-semibold leading-7 text-gray-50">Join the Fun (Not Really) <span aria-hidden="true">→</span></router-link>
         </div>
       </div>
       <div class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32">
