@@ -2,7 +2,7 @@ import axios from "axios"
 import { useUserStore } from "@/stores/user"
 
 export const authClient = axios.create({
-  baseURL: import.meta.env.VITE_SYNTASK_API_URL,
+  baseURL: 'https://api.syntask.app/',
   withCredentials: true,
 })
 
