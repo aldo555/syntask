@@ -30,7 +30,7 @@
           <ArrowRightOnRectangleIcon @click="logout()" class="h-6 w-6 text-gray-400 cursor-pointer" />
         </div>
       </div>
-      <div class="mx-auto px-6 max-w-6xl w-full pt-10 pb-24 sm:pb-32 flex flex-col lg:py-40 lg:pt-32 lg:px-8 items-center">
+      <div class="mx-auto px-6 max-w-6xl w-full pt-16 pb-24 sm:pb-32 flex flex-col lg:py-40 lg:pt-32 lg:px-8 items-center">
         <Logo class="text-5xl sm:text-6xl" />
 
         <SmartInput class="w-full mt-16 md:mt-20 sm:mt-24" />
