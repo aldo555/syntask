@@ -261,6 +261,11 @@ function resetUserInput() {
   if (isSearching.value) {
     taskStore.fetchTasks()
   }
+
+  if (currentlyEditedTask.value !== null) {
+    currentlyEditedTask.value = null
+    taskStore.resetEdit()
+  }
 }
 
 function switchToNewTask() {
