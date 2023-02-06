@@ -160,6 +160,8 @@ function searchTasks() {
 
 function deleteAllTasks() {
   taskStore.deleteAllTasks().then((data) => {
+    resetUserInput()
+
     notify({
       group: "success",
       title: "Success",
