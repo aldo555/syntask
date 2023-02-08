@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="tasks.length" class="mb-4 text-2xl text-gray-400">Past Tasks Cemetery</div>
+    <div v-if="tasks.length" class="mb-4 text-2xl text-gray-500">Past Tasks Cemetery</div>
     <div v-if="tasks.length" class="overflow-hidden bg-gray-600/10 backdrop-blur-sm border border-gray-800 shadow rounded-md opacity-90">
       <ul role="list" class="divide-y divide-gray-800" v-auto-animate>
         <li v-for="task in tasks" :key="task.id" class="flex">

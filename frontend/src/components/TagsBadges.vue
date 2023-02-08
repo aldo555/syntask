@@ -2,7 +2,7 @@
   <div
     v-for="tag in tags"
     :key="tag"
-    class="inline-flex items-center rounded-full bg-indigo-900 border border-indigo-700 py-0.5 pl-2.5 pr-1 mr-2 mt-2 text-sm font-medium text-indigo-200"
+    class="font-mono inline-flex items-center rounded-full bg-indigo-900 border border-indigo-700 py-0.5 pl-2.5 pr-1 mr-2 mt-2 text-sm font-medium text-indigo-200"
     :class="{ 'pr-2.5': !isRemovable }"
   >
     {{ tag }}

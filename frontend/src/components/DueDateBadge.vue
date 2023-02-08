@@ -1,6 +1,6 @@
 <template>
   <div
-    class="inline-flex items-center rounded-full bg-cyan-900 border border-cyan-700 py-0.5 pl-2.5 pr-1 mr-2 mt-2 text-sm font-medium text-cyan-200"
+    class="font-mono inline-flex items-center rounded-full bg-cyan-900 border border-cyan-700 py-0.5 pl-2.5 pr-1 mr-2 mt-2 text-sm font-medium text-cyan-200"
     :class="{ 'pr-2.5': !isRemovable }"
   >
     Due on {{ dueDate }}

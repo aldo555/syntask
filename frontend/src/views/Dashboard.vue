@@ -14,7 +14,7 @@
     <div class="max-w-6xl w-full">
       <div class="mx-auto px-6 max-w-6xl w-full pt-4 flex lg:px-8 justify-between items-center">
         <div class="pr-8">
-          <p class="text-gray-400">Hey {{ userStore.user.name.split(' ')[0] }}, the struggle continues.</p>
+          <p class="text-gray-400">Hey <span class="font-medium text-gray-300">{{ userStore.user.name.split(' ')[0] }}</span>, the struggle continues.</p>
         </div>
         <div class="flex">
           <SunIcon @click="enableLightMode()" class="h-6 w-6 text-gray-400 mr-2" />

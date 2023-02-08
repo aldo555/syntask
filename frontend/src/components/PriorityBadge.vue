@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="priority"
-    class="inline-flex items-center rounded-full bg-indigo-900 border border-indigo-700 py-0.5 pl-2.5 pr-1 mr-2 mt-2 text-sm font-medium"
+    class="font-mono inline-flex items-center rounded-full bg-indigo-900 border border-indigo-700 py-0.5 pl-2.5 pr-1 mr-2 mt-2 text-sm font-medium"
     :class="{
       'bg-red-900': priority === '0',
       'text-red-200': priority === '0',

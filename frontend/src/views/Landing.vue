@@ -23,7 +23,7 @@
     <div class="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:py-40 lg:px-8 items-center">
       <div class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl">
         <Logo />
-        <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-50 sm:text-5xl">Your One-Stop-Shop for Unfinished Business</h1>
+        <h1 class="mt-10 text-4xl font-bold tracking-tight text-gray-50 leading-tight sm:text-5xl sm:leading-tight">Your One-Stop-Shop for Unfinished Business</h1>
         <p class="mt-6 text-lg leading-8 text-gray-300">Finally, a to-do list app that never runs out of tasks! Because let's be real, your responsibilities are never-ending, so why should your to-do list be any different?</p>
         <div class="mt-6 sm:mt-10 flex flex-wrap items-center gap-x-6">
           <router-link to="login" class="mt-4 sm:mt-0 rounded-md bg-indigo-500 px-3.5 py-1.5 sm:text-base font-semibold leading-7 text-indigo-50 shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">

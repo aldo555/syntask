@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mb-4 text-2xl text-gray-400">Procrastination Station</div>
+    <div class="mb-4 text-2xl text-gray-500">Procrastination Station</div>
     <div class="relative">
       <div class="absolute inset-0 rounded-md blur-md opacity-30"></div>
       <div class="relative overflow-hidden bg-gray-800 border border-gray-700 shadow rounded-md">
