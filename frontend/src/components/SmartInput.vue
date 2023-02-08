@@ -88,7 +88,7 @@ const priority = ref(null)
 const dueDate = ref(null)
 
 taskStore.$subscribe(() => {
-  if (taskStore.currentlyEditedTask) {
+  if (taskStore.currentlyEditedTask && taskStore.currentlyEditedTask.id !== currentlyEditedTask.value?.id) {
     currentlyEditedTask.value = taskStore.currentlyEditedTask
     userInput.value = currentlyEditedTask.value.title
     tags.value = currentlyEditedTask.value.tags.map(tag => tag.name.en)
@@ -96,6 +96,12 @@ taskStore.$subscribe(() => {
     dueDate.value = currentlyEditedTask.value.due_date
     smartInput.value.focus({ preventScroll: true })
     scrollToTop()
+  }
+
+  if (currentlyEditedTask.value && !taskStore.ongoingTasks.find(task => task.id === currentlyEditedTask.value.id)) {
+    taskStore.resetEdit()
+    currentlyEditedTask.value = null
+    resetUserInput()
   }
 })
 
