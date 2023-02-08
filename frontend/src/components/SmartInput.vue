@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-center" :class="{'mb-3': isSyntaskGuideShown, 'mb-6': !isSyntaskGuideShown }">
+    <div class="text-center mb-3">
       <span v-if="isSyntaskGuideShown" @click="isSyntaskGuideShown = false" class="cursor-pointer text-gray-300 hover:text-gray-200">Hide Syntask Guide</span>
       <span v-else @click="isSyntaskGuideShown = true" class="cursor-pointer text-gray-300 hover:text-gray-200">Show Syntask Guide</span>
     </div>
