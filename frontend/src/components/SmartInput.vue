@@ -28,10 +28,10 @@
       </div>
     </div>
     <div class="relative group">
-      <div class="absolute -inset-0.5 bg-gradient-to-r from-green-700 via-indigo-700 to-cyan-700 animate-gradient-x blur-sm opacity-75 rounded-full group-hover:opacity-100 transition duration-1000 group-hover:duration-200 group-focus-within:opacity-100 group-focus-within:duration-200" />
+      <div class="absolute -inset-0.5 bg-gradient-to-r from-green-700 via-indigo-700 to-cyan-700 animate-gradient-x blur-sm opacity-60 rounded-full group-hover:opacity-100 transition duration-1000 group-hover:duration-200 group-focus-within:opacity-100 group-focus-within:duration-200" />
       <div class="flex rounded-md shadow-sm bg-gray-800 rounded-full">
         <div class="relative flex flex-grow items-stretch focus-within:z-10">
-          <input @keydown.space="extractSyntax()" @keydown.enter="currentlyEditedTask ? updateTask() : !isSearching ? createTask() : searchTasks()" v-model="userInput" ref="smartInput" type="text" name="smart" id="smart" class="font-mono block w-full rounded-none rounded-l-full border-gray-700 border-r-0 bg-gray-800 text-gray-50 placeholder-gray-500 pl-5 focus:outline-none focus:ring-0 focus:border-gray-700" placeholder="Write down your latest burden or ignore it. #pointless !3 due:today" />
+          <input @keydown.space="extractSyntax()" @keydown.enter="currentlyEditedTask ? updateTask() : !isSearching ? createTask() : searchTasks()" v-model="userInput" ref="smartInput" type="text" name="smart" id="smart" class="font-mono block w-full rounded-none rounded-l-full border-gray-700 border-r-0 bg-gray-800 text-gray-50 placeholder-gray-500 pl-5 focus:outline-none focus:ring-0 focus:border-gray-700 mr-[1px]" placeholder="Write down your latest burden or ignore it. #pointless !3 due:today" />
         </div>
         <div v-if="!currentlyEditedTask" type="button" class="relative -ml-px inline-flex items-center space-x-2 border border-gray-700 border-l-0 bg-gray-800 pr-1 pl-2 py-1 text-sm font-medium text-gray-700">
           <Switch v-model="isSearching" :class="[isSearching ? 'bg-indigo-900' : 'bg-indigo-700', 'relative inline-flex h-8 w-16 flex-shrink-0 cursor-pointer rounded-full border-2 border-gray-700 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-0']">
@@ -46,10 +46,10 @@
           </span>
           </Switch>
         </div>
-        <button v-if="currentlyEditedTask" @click="clearEdit()" type="button" class="relative -ml-px inline-flex items-center space-x-2 w-24 flex justify-center border border-gray-700 bg-gray-800 px-4 py-2 text-sm font-medium text-gray-100 hover:bg-gray-700 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+        <button v-if="currentlyEditedTask" @click="clearEdit()" type="button" class="relative -ml-px inline-flex items-center space-x-2 w-24 flex justify-center border border-gray-700 bg-gray-800 px-4 py-2 text-sm font-medium text-gray-100 hover:bg-gray-700 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition ease-in-out duration-150">
           Clear
         </button>
-        <button @click="currentlyEditedTask ? updateTask() : !isSearching ? createTask() : searchTasks()" type="button" class="relative -ml-px inline-flex items-center space-x-2 w-24 flex justify-center rounded-r-full border border-gray-700 bg-gray-800 px-4 py-2 text-sm font-medium text-gray-100 hover:bg-gray-700 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">
+        <button @click="currentlyEditedTask ? updateTask() : !isSearching ? createTask() : searchTasks()" type="button" class="relative -ml-px inline-flex items-center space-x-2 w-24 flex justify-center rounded-r-full border border-gray-700 bg-gray-800 px-4 py-2 text-sm font-medium text-gray-100 hover:bg-gray-700 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition ease-in-out duration-150">
           <span v-if="currentlyEditedTask">Save</span>
           <span v-else-if="!isSearching && !currentlyEditedTask">Create</span>
           <span v-else>Search</span>

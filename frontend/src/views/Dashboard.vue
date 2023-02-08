@@ -14,11 +14,11 @@
     <div class="max-w-6xl w-full">
       <div class="mx-auto px-6 max-w-6xl w-full pt-4 flex lg:px-8 justify-between items-center">
         <div class="pr-8">
-          <p class="text-gray-400">Hey <span class="font-medium text-gray-300">{{ userStore.user.name.split(' ')[0] }}</span>, the struggle continues.</p>
+          <p class="text-gray-400">Hey <span @click="displayProfile()" class="font-medium text-gray-300 hover:text-gray-200 cursor-pointer">{{ userStore.user.name.split(' ')[0] }}</span>, the struggle continues.</p>
         </div>
         <div class="flex">
-          <SunIcon @click="enableLightMode()" class="h-6 w-6 text-gray-400 mr-2" />
-          <ArrowRightOnRectangleIcon @click="logout()" class="h-6 w-6 text-gray-400 cursor-pointer" />
+          <SunIcon @click="enableLightMode()" class="h-6 w-6 text-gray-400 hover:text-gray-300 mr-2 cursor-pointer" />
+          <ArrowRightOnRectangleIcon @click="logout()" class="h-6 w-6 text-gray-400 hover:text-gray-300 cursor-pointer" />
         </div>
       </div>
       <div class="mx-auto px-6 max-w-6xl w-full pt-16 pb-24 sm:pb-32 flex flex-col lg:py-40 lg:pt-32 lg:px-8 items-center">
@@ -52,6 +52,15 @@ function enableLightMode() {
     group: "success",
     title: "Whoop-dee-doo!",
     text: "Light mode? More like never-gonna-see-the-light mode.",
+    duration: 4000,
+  })
+}
+
+function displayProfile() {
+  notify({
+    group: "success",
+    title: "Whoop-dee-doo!",
+    text: "No need for self-love here, let's tackle those tasks first.",
     duration: 4000,
   })
 }
